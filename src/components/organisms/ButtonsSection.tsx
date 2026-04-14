@@ -4,7 +4,7 @@ import Button from "../atoms/Button";
 import Text from "../atoms/Text";
 const ButtonsSection = () => {
   return (
-    <div className="flex flex-col justify-center items-center my-20 bg-gray-100 p-10">
+    <div className="w-full flex flex-col justify-center items-center bg-gray-100 p-10">
       <GroupButtons
         titleText="primary"
         variantButton="primary"
