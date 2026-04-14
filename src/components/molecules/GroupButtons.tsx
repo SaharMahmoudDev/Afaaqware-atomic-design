@@ -1,57 +1,46 @@
-import React, { ReactNode } from 'react'
-import Button from '../atoms/Button'
-import Text from '../atoms/Text'
-interface props{
-  titleText:ReactNode,
-  variantButton?:string,
-    variantText?:string
-
+import React from "react";
+import Button from "../atoms/Button";
+import Text from "../atoms/Text";
+interface props {
+  titleText: string;
+  variantButton: "primary" | "secondary" | "outline";
+  variantText: "secondary" | "disabled" | "white" | "primary" | "alt";
 }
 
+const GroupButtons = ({
+  titleText,
+  variantButton = "secondary",
+  variantText = "primary",
+}: props) => {
+  return (
+    <>
+      <div className="flex justify-center items-center gap-10 mb-10">
+        <Button variant={variantButton}>
+          <Text variant={variantText} size="sm" center={true}>
+            {`small ${titleText}`}
+          </Text>
+        </Button>
 
-const GroupButtons = ({titleText,  variantButton,variantText
-}:props) => {
-  return (<>
-  
-  
-    {/* Primary Buttons */}
-          <div className="flex justify-center items-center gap-10 ">
-            <Button>
-              <Text variant="white" size="sm" center={true}>
-              {/* small  primary  */}
-              {titleText}
-              </Text>
-            </Button>
+        <Button variant={variantButton} size="md">
+          <Text variant={variantText} center={true}>
+            {`medium ${titleText}`}
+          </Text>
+        </Button>
 
-            <Button size="md">
-              <Text variant="white" center={true}>
-              {/* medium  primary  */}
-                            {titleText}
+        <Button variant={variantButton} size="lg">
+          <Text variant={variantText} size="lg" center={true}>
+            {`larg ${titleText}`}
+          </Text>
+        </Button>
 
-              </Text>
-            </Button>
+        <Button variant={variantButton} size="lg" disabled={true}>
+          <Text variant={variantText} size="lg" center={true}>
+            larg disabled
+          </Text>
+        </Button>
+      </div>
+    </>
+  );
+};
 
-            <Button size="lg">
-              <Text variant="white" size="lg" center={true}>
-              {/* larg  primary  */}
-                            {titleText}
-
-              </Text>
-            </Button>
-
-            <Button size="lg" disabled={true}>
-              <Text variant="white" size="lg" center={true}>
-              {/* larg  disabled */}
-                            {titleText}
-
-              </Text>
-            </Button>
-          </div>
-  </>
-    
-
-
-  )
-}
-
-export default GroupButtons
+export default GroupButtons;

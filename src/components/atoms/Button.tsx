@@ -6,16 +6,19 @@ interface props{
   variant?:"primary"| "secondary"|"outline",
   size?:"sm"|"md"|"lg",
   center?:boolean,
-    disabled?:boolean
+    disabled?:boolean,
+    color?:string
+
 
 
 }
-const Button = ({variant="primary",size="sm",className="w-fit h-fit capitalize cursor-pointer ds-hover hover:opacity-70! ",disabled=false,center,children,...props}:props) => {
+const Button = ({variant="primary",size="sm",className,disabled=false,center,color,children,...props}:props) => {
+  const basicClasses="w-fit h-fit capitalize cursor-pointer ds-hover hover:opacity-70! "
   const variants={
 primary:"ds-bg-primary ",
 secondary:"ds-bg-primary-200",
 outline:"bg-transparent  ds-border-sm",
-disabled:""
+
   }
   const sizes={  
     sm:"ds-p-sm  ds-rounded-sm",
@@ -25,7 +28,7 @@ disabled:""
 
   }
   return (
-    <button className={cn(sizes[size],variants[variant],center?"text-center":"",disabled&&"ds-text-disabled",className,)} {...props}>{children}</button>
+    <button className={cn(sizes[size],basicClasses,color?color:variants[variant],center?"text-center":"",disabled&&"ds-text-disabled",className)} {...props}>{children}</button>
   )
 }
 

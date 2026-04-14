@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/cn";
 interface Props {
   size?: "sm" | "md" | "lg";
-  variant?: "secondary" | "disabled" | "white" | "primary" | "alt";
+  variant?:"secondary" | "disabled" | "white" | "primary" | "alt";
   center?: boolean;
   className?: string;
   children: React.ReactNode;
