@@ -21,7 +21,7 @@ const ButtonsSection = () => {
         variantText="alt"
       />
 
-      <div className="flex justify-center items-center gap-5">
+      <div className="flex justify-center items-center gap-5 flex-wrap">
         <Button color="bg-blue-600">
           <Text size="sm" variant="white">
             custom button

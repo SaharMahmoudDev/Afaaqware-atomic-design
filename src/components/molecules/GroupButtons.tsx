@@ -14,7 +14,7 @@ const GroupButtons = ({
 }: props) => {
   return (
     <>
-      <div className="flex justify-center items-center gap-10 mb-10">
+      <div className="flex justify-center items-center flex-wrap gap-10 mb-10">
         <Button variant={variantButton}>
           <Text variant={variantText} size="sm" center={true}>
             {`small ${titleText}`}
